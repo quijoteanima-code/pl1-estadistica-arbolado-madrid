@@ -88,6 +88,7 @@ fig1 <- ggplot(datos, aes(x = altura_total_m, fill = distrito)) +
   labs(title = "Figura 1. Histograma de la altura total del árbol por distrito",
        x = "Altura total (m)", y = "Número de árboles", fill = "Distrito") +
   theme_minimal()
+print(fig1)
 ggsave("figura1_histograma.png", fig1, width = 7, height = 5, dpi = 150)
 
 fig2 <- ggplot(datos, aes(x = distrito, y = altura_total_m, fill = distrito)) +
@@ -95,6 +96,7 @@ fig2 <- ggplot(datos, aes(x = distrito, y = altura_total_m, fill = distrito)) +
   labs(title = "Figura 2. Diagrama de cajas de la altura total del árbol por distrito",
        x = "Distrito", y = "Altura total (m)") +
   theme_minimal() + theme(legend.position = "none")
+print(fig2)
 ggsave("figura2_boxplot.png", fig2, width = 6, height = 5, dpi = 150)
 
 tabla2_df <- as.data.frame(tabla2)
@@ -104,6 +106,7 @@ fig3 <- ggplot(tabla2_df, aes(x = altura_categoria, y = frecuencia, fill = distr
   labs(title = "Figura 3. Número de árboles por tramo de altura y distrito",
        x = "Tramo de altura", y = "Número de árboles", fill = "Distrito") +
   theme_minimal()
+print(fig3)
 ggsave("figura3_barras.png", fig3, width = 7, height = 5, dpi = 150)
 
 fig4 <- ggplot(datos, aes(x = altura_total_m, fill = distrito)) +
@@ -111,6 +114,7 @@ fig4 <- ggplot(datos, aes(x = altura_total_m, fill = distrito)) +
   labs(title = "Figura 4. Densidad de la altura total del árbol por distrito",
        x = "Altura total (m)", y = "Densidad", fill = "Distrito") +
   theme_minimal()
+print(fig4)
 ggsave("figura4_densidad.png", fig4, width = 7, height = 5, dpi = 150)
 
 # Diagramas interactivos con plotly (se abren en el navegador)
@@ -119,6 +123,7 @@ fig5 <- plot_ly(datos, x = ~distrito, y = ~altura_total_m, color = ~distrito,
   layout(title = "Figura 5. Diagrama de cajas interactivo de la altura total del árbol",
          xaxis = list(title = "Distrito"),
          yaxis = list(title = "Altura total (m)"))
+print(fig5)
 saveWidget(fig5, "figura5_boxplot_interactivo.html", selfcontained = TRUE)
 
 fig6 <- plot_ly(datos, x = ~altura_total_m, color = ~distrito,
@@ -127,4 +132,5 @@ fig6 <- plot_ly(datos, x = ~altura_total_m, color = ~distrito,
          title = "Figura 6. Histograma interactivo de la altura total del árbol",
          xaxis = list(title = "Altura total (m)"),
          yaxis = list(title = "Número de árboles"))
+print(fig6)
 saveWidget(fig6, "figura6_histograma_interactivo.html", selfcontained = TRUE)
