@@ -45,7 +45,7 @@ El archivo original tiene 799.110 filas, una por árbol, y 12 columnas: identifi
 
 ### 2.2 Herramientas
 
-Los cálculos y los diagramas se hicieron en RStudio con R 4.6.1 y los paquetes ggplot2 (diagramas estáticos), plotly y htmlwidgets (diagramas interactivos) y moments (coeficiente de asimetría y curtosis). El código en R se generó con ayuda de un asistente de inteligencia artificial (Claude) y se revisó y ejecutó en RStudio. El informe se editó con Microsoft Word y se publicó en este repositorio en formato Markdown.
+Los cálculos y los diagramas se hicieron en RStudio con R 4.6.1 y los paquetes ggplot2 (diagramas estáticos), plotly y htmlwidgets (diagramas interactivos) y e1071 (coeficiente de asimetría y curtosis). El código en R se generó con ayuda de un asistente de inteligencia artificial (Claude) y se revisó y ejecutó en RStudio. El informe se editó con Microsoft Word y se publicó en este repositorio en formato Markdown.
 
 ### 2.3 Diseño
 
@@ -80,8 +80,8 @@ La tabla 1 recoge las medidas de la altura total para cada distrito y para la mu
 | Máximo (m) | 19,00 | 18,00 | 19,00 |
 | Rango (m) | 16,50 | 16,50 | 17,50 |
 | Rango intercuartílico (m) | 6,50 | 4,58 | 5,50 |
-| Coeficiente de asimetría | 0,94 | 1,13 | 1,04 |
-| Curtosis | 3,02 | 3,38 | 3,21 |
+| Coeficiente de asimetría | 0,93 | 1,11 | 1,03 |
+| Curtosis | −0,04 | 0,31 | 0,18 |
 
 ### 3.3 Tablas de contingencia
 
@@ -128,7 +128,7 @@ La desviación típica es de 4,35 metros en Chamartín y de 3,95 metros en Villa
 
 La diferencia entre distritos se concentra en la parte alta de la distribución. El primer cuartil es casi el mismo (4,50 metros en Chamartín y 4,47 metros en Villaverde), pero el tercer cuartil llega a 11,00 metros en Chamartín y se queda en 9,05 metros en Villaverde. Por eso el rango intercuartílico es de 6,50 metros en Chamartín y de 4,58 metros en Villaverde. El rango coincide en los dos distritos, 16,50 metros, aunque desplazado: va de 2,50 a 19,00 metros en Chamartín y de 1,50 a 18,00 metros en Villaverde.
 
-El histograma de la figura 1 y las curvas de densidad de la figura 4 muestran dos distribuciones asimétricas a la derecha: la mayor parte de los árboles mide entre 3 y 8 metros (59 en Chamartín y 69 en Villaverde) y hay una cola de árboles más altos. El coeficiente de asimetría es positivo en los dos casos, 0,94 en Chamartín y 1,13 en Villaverde, algo mayor en Villaverde. La curtosis es de 3,02 en Chamartín y de 3,38 en Villaverde; tomando como referencia el valor 3 de la distribución normal, Chamartín tiene un apuntamiento casi igual al de la normal y Villaverde algo mayor.
+El histograma de la figura 1 y las curvas de densidad de la figura 4 muestran dos distribuciones asimétricas a la derecha: la mayor parte de los árboles mide entre 3 y 8 metros (59 en Chamartín y 69 en Villaverde) y hay una cola de árboles más altos. El coeficiente de asimetría es positivo en los dos casos, 0,93 en Chamartín y 1,11 en Villaverde, algo mayor en Villaverde. La curtosis es de −0,04 en Chamartín y de 0,31 en Villaverde; tomando como referencia el valor 0 de la distribución normal, Chamartín tiene un apuntamiento casi igual al de la normal y Villaverde algo mayor.
 
 Las tablas 2 y 3 y la figura 3 muestran el reparto por tramos de altura. El 42,0 % de los árboles de cada distrito mide 5 metros o menos, de modo que en el tramo bajo no hay diferencia. En el tramo alto, de más de 10 metros, está el 26,0 % de los árboles de Chamartín y el 22,0 % de los de Villaverde. En el tramo medio ocurre lo contrario: 36,0 % en Villaverde y 32,0 % en Chamartín. Como cada distrito aporta 100 árboles, cada punto porcentual equivale a un árbol, y las diferencias en los tramos medio y alto son de cuatro árboles.
 
@@ -150,7 +150,7 @@ La diferencia de medias, 0,69 metros, es pequeña al lado de la desviación típ
 - R Core Team (2026). *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Viena, Austria.
 - Wickham, H. (2016). *ggplot2: Elegant Graphics for Data Analysis*. Springer-Verlag New York.
 - Sievert, C. (2020). *Interactive Web-Based Data Visualization with R, plotly, and shiny*. Chapman and Hall/CRC.
-- Komsta, L. y Novomestky, F. (2022). *moments: Moments, Cumulants, Skewness, Kurtosis and Related Tests*. Paquete de R, versión 0.14.1. <https://CRAN.R-project.org/package=moments>
+- Meyer, D., Dimitriadou, E., Hornik, K., Weingessel, A. y Leisch, F. (2025). *e1071: Misc Functions of the Department of Statistics, Probability Theory Group (Formerly: E1071), TU Wien*. Paquete de R, versión 1.7-17. <https://CRAN.R-project.org/package=e1071>
 
 ## Contenido del repositorio
 

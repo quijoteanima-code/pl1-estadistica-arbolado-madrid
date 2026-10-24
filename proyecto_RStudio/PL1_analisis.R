@@ -9,8 +9,8 @@ if (!require("plotly")) install.packages("plotly")
 library(plotly)
 if (!require("htmlwidgets")) install.packages("htmlwidgets")
 library(htmlwidgets)
-if (!require("moments")) install.packages("moments")
-library(moments)
+if (!require("e1071")) install.packages("e1071")
+library(e1071)
 
 # Fuera de RStudio, saveWidget necesita saber dónde está pandoc
 if (Sys.getenv("RSTUDIO_PANDOC") == "") {
@@ -50,7 +50,7 @@ medidas <- function(x) {
     rango       = max(x) - min(x),
     riq         = IQR(x),
     asimetria   = skewness(x),
-    curtosis    = kurtosis(x))   # curtosis de Pearson: la normal vale 3
+    curtosis    = kurtosis(x))   # e1071: curtosis de exceso, la normal vale 0
 }
 
 tabla1 <- round(sapply(split(datos$altura_total_m, datos$distrito), medidas), 2)
